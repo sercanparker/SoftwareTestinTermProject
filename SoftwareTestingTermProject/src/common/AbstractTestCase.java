@@ -2,10 +2,25 @@ package common;
 
 import java.util.List;
 
-public abstract class AbstractTestCase {
+
+public class AbstractTestCase {
+	/**
+	 * Abstract Test Case consist of List of Conditions
+	 * @see Condition
+	 * */
 	private List<Condition> conditions;
+	
+	
+	
+	/**
+	 * Abstract Test Case has only one Action.
+	 * @see Action
+	 * */
 	private Action<?> action;
 
+	
+	
+	
 	public List<Condition> getListOfCondition() {
 		return conditions;
 	}

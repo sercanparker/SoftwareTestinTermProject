@@ -1,8 +1,15 @@
 package tab;
-
-public abstract class Tab<T> {
-	private String path;
-	private String name;
+/**
+ * Class is used by ExcelFile object to represent its Tab structure */
+public abstract class Tab {
+	/**
+	 * This path is same with path of File which holds it.
+	 */
+	protected String path;
+	
+	/**
+	 * Physical name of Tab.*/
+	protected String name;
 
 	public Tab() {
 
@@ -12,11 +19,7 @@ public abstract class Tab<T> {
 		this.path = path;
 		this.name = name;
 	}
-
-	public abstract Boolean write();
-
-	public abstract Boolean read();
-
+	
 	public String getPath() {
 		return path;
 	}
@@ -32,5 +35,14 @@ public abstract class Tab<T> {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	/**
+	 * write and read methods have different implementations
+	 * @see Boolean */
+	public abstract Boolean write();
+
+	public abstract Boolean read();
+
+
 
 }

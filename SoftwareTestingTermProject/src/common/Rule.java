@@ -3,6 +3,11 @@ package common;
 import java.util.List;
 
 public class Rule extends AbstractTestCase {
+	/**
+	 * Rule has List of Abstract Test Case
+	 * For each object of list has same Condition set.
+	 * @see AbstractTestCase
+	 * */
 	private List<AbstractTestCase> abstractTestCases;
 
 	public Rule() {

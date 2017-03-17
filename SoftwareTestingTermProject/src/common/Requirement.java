@@ -1,10 +1,14 @@
 package common;
 
+/**
+ * Represent requirement*/
 public class Requirement {
+	
 	private String description;
 	
-	public Requirement(){
-		
+	
+	public Requirement(String description){
+		this.description = description;
 	}
 
 	public String getDescription() {

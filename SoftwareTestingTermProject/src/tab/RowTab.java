@@ -2,33 +2,30 @@ package tab;
 
 import java.util.List;
 
-public abstract class RowTab<T> extends Tab<T> {
+/**
+ * This class was created to represent that each row on Tab is an object.
+ *   
+ */
+public abstract class RowTab<T> extends Tab {
 
-	private List<Tab<T>> rows;
+	protected  List<T> rows;
 
 	public RowTab() {
 
 	}
 
-	public RowTab(List<Tab<T>> rows) {
+	public RowTab(List<T> rows,String path,String name) {
+		super(path,name);
 		this.rows = rows;
 	}
 
-	@Override
-	public Boolean write() {
-		return null;
-	}
 
-	@Override
-	public Boolean read() {
-		return null;
-	}
 
-	public List<Tab<T>> getRows() {
+	public List<T> getRows() {
 		return rows;
 	}
 
-	public void setRows(List<Tab<T>> rows) {
+	public void setRows(List<T> rows) {
 		this.rows = rows;
 	}
 
