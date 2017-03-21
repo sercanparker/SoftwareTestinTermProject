@@ -1,4 +1,7 @@
 package tab;
+
+import java.util.List;
+
 /**
  * Class is used by ExcelFile object to represent its Tab structure */
 public abstract class Tab {
@@ -10,14 +13,19 @@ public abstract class Tab {
 	/**
 	 * Physical name of Tab.*/
 	protected String name;
+	
+	/**
+	 * variable that indicates that host excelfile object that tab exist.*/
+	protected ExcelFile hostExcelFile;
 
 	public Tab() {
 
 	}
 
-	public Tab(String path, String name) {
+	public Tab(String path, String name, ExcelFile hostExcelFile) {
 		this.path = path;
 		this.name = name;
+		this.hostExcelFile = hostExcelFile;
 	}
 	
 	public String getPath() {

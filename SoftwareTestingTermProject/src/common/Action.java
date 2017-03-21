@@ -3,7 +3,7 @@ package common;
 public class Action<T> {
 	/**
 	 * Type of action PRINT,OPEN etc.*/
-	private EActionType encryptionType;
+	private EActionType actionType;
 	
 	
 	
@@ -13,16 +13,16 @@ public class Action<T> {
 
 
 	public Action(EActionType encryptionType, T parameter) {
-		this.encryptionType = encryptionType;
+		this.actionType = encryptionType;
 		this.parameter = parameter;
 	}
 
 	public EActionType getEncryptionType() {
-		return encryptionType;
+		return actionType;
 	}
 
 	public void setEncryptionType(EActionType encryptionType) {
-		this.encryptionType = encryptionType;
+		this.actionType = encryptionType;
 	}
 
 	public T getParameter() {

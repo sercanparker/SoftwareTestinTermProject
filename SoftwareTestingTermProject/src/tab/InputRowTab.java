@@ -1,5 +1,7 @@
 package tab;
 
+import java.util.List;
+
 import common.InputVariable;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
@@ -22,6 +24,7 @@ public class InputRowTab extends RowTab<InputVariable<Integer>> {
 	 *Not implemented for term project now. */
 	@Override
 	public Boolean read() {
-		throw new NotImplementedException();
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
