@@ -1,24 +1,29 @@
 package common;
 
+/**
+ * Super class for Input and Output
+ * */
 public abstract class Parameter<T> {
-	private String variable;
-	private T value;
-
-	public Parameter() {
-
-	}
+	/**
+	 * Name of parameter
+	 * example: side_A*/
+	protected String name;
+	/**
+	 * Value of parameter
+	 * example: side_A = 5*/
+	protected T value;
 
 	public Parameter(String variable, T value) {
-		this.variable = variable;
+		this.name = variable;
 		this.value = value;
 	}
 
 	public String getVariable() {
-		return variable;
+		return name;
 	}
 
 	public void setVariable(String variable) {
-		this.variable = variable;
+		this.name = variable;
 	}
 
 	public T getValue() {

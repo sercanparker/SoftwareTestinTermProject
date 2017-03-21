@@ -1,24 +1,28 @@
 package common;
 
-public class Action<T> extends AbstractTestCase {
-	private EncryptionType encryptionType;
+public class Action<T> {
+	/**
+	 * Type of action PRINT,OPEN etc.*/
+	private EActionType actionType;
+	
+	
+	
+	/**
+	 *Answer of while action is active mode, which parameter are on fire ? */
 	private T parameter;
 
-	public Action() {
 
-	}
-
-	public Action(EncryptionType encryptionType, T parameter) {
-		this.encryptionType = encryptionType;
+	public Action(EActionType encryptionType, T parameter) {
+		this.actionType = encryptionType;
 		this.parameter = parameter;
 	}
 
-	public EncryptionType getEncryptionType() {
-		return encryptionType;
+	public EActionType getEncryptionType() {
+		return actionType;
 	}
 
-	public void setEncryptionType(EncryptionType encryptionType) {
-		this.encryptionType = encryptionType;
+	public void setEncryptionType(EActionType encryptionType) {
+		this.actionType = encryptionType;
 	}
 
 	public T getParameter() {

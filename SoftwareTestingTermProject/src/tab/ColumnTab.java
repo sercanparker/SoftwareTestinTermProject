@@ -2,24 +2,19 @@ package tab;
 
 import java.util.List;
 
-public abstract class ColumnTab<T> extends Tab<T> {
-	private List<T> columns;
+/**
+ * This class was created to represent that each column on Tab is an object.
+ *   
+ */
+public abstract class ColumnTab<T> extends Tab {
+	protected List<T> columns;
 
 	public ColumnTab() {
 	}
 
-	public ColumnTab(List<T> columns) {
+	public ColumnTab(List<T> columns,String path,String name,ExcelFile hostExcelFile) {
+		super(path,name,hostExcelFile);
 		this.columns = columns;
-	}
-
-	@Override
-	public Boolean write() {
-		return null;
-	}
-
-	@Override
-	public Boolean read() {
-		return null;
 	}
 
 	public List<T> getColumns() {
