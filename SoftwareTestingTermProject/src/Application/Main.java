@@ -32,10 +32,12 @@ public class Main {
 		
 		String path ;
 		System.out.println("################");
-		System.out.println("Do not forget: While preparing Decision Table be sure that Conditions and Actions lines have reference from Condition and Action tabs.");
+		System.out.println("DO NOT FORGET:\n While preparing Decision Table be sure that Conditions \n and Actions lines have reference from Condition and Action tabs \n and just use T(CAPITAL) for True, F(CAPITAL) for False and X for active Action");
 		System.out.println("example : =Conditions!B2 etc.");
+		System.out.println("################");
+		
 		System.out.println("Enter Excel File Path and press enter");
-		System.out.println("example : C:\\Users\\deltasmarttech\\Desktop\\Homework1_template.xlsx");
+		System.out.println("example : C:\\Users\\TonyParker\\Desktop\\Homework1_template.xlsx");
 		System.out.println("################");
 		
 		Scanner scan = new Scanner(System.in);
