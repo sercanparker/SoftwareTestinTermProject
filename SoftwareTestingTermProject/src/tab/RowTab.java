@@ -10,6 +10,7 @@ public abstract class RowTab<T> extends Tab {
 
 	protected  List<T> rows;
 
+	/*
 	public RowTab() {
 
 	}
@@ -17,7 +18,7 @@ public abstract class RowTab<T> extends Tab {
 	public RowTab(List<T> rows,String path,String name,ExcelFile hostExcelFile) {
 		super(path,name,hostExcelFile);
 		this.rows = rows;
-	}
+	}*/
 
 
 

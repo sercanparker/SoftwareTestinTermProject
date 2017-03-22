@@ -10,6 +10,15 @@ import common.Requirement;
  * @see Requirement*/
 public class RequirementRowTab extends RowTab<Requirement>{
 
+	
+	public RequirementRowTab(List<Requirement> rows,String path,String name,ExcelFile hostExcelFile) {
+		// TODO Auto-generated constructor stub
+		super.rows = rows;
+		super.path = path;
+		super.name = name;
+		super.hostExcelFile = hostExcelFile;
+		
+	}
 	/**
 	 *According to row list objects, it write onto cells 
 	 *Not implemented for term project now. */

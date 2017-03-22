@@ -17,6 +17,12 @@ public class AbstractTestCase {
 	 * @see Action
 	 * */
 	private Action<?> action;
+	
+	public AbstractTestCase(List<Condition> conditions,Action<?> action) {
+		// TODO Auto-generated constructor stub
+		this.conditions = conditions;
+		this.action = action;
+	}
 
 	
 	

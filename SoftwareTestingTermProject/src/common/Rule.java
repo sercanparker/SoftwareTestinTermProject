@@ -2,7 +2,7 @@ package common;
 
 import java.util.List;
 
-public class Rule extends AbstractTestCase {
+public class Rule  {
 	/**
 	 * Rule has List of Condition and Action objects
 	 * For each object of list has same Condition set.
@@ -10,40 +10,36 @@ public class Rule extends AbstractTestCase {
 	 * @see Action
 	 * */
 	private List<Condition> conditions;
-	private List<Action<?>> actions;
+	private List<Action<String>> actions;
 	//private List<AbstractTestCase> abstractTestCases;
 
 	public Rule() {
 
 	}
 
-	public Rule(List<Condition> conditions, List<Action<?>> actions){
+	public Rule(List<Condition> conditions, List<Action<String>> actions){
 		this.actions = actions;
 		this.conditions = conditions;
 	}
 	
-	@Override
-	public Action<?> getAction() {
-		// TODO Auto-generated method stub
-		return super.getAction();
+	
+
+	public void setConditions(List<Condition> conditions) {
+		this.conditions = conditions;
 	}
 	
-	@Override
-	public List<Condition> getListOfCondition() {
-		// TODO Auto-generated method stub
-		return super.getListOfCondition();
+	
+	public void setActions(List<Action<String>> actions) {
+		this.actions = actions;
 	}
 	
-	@Override
-	public void setAction(Action<?> action) {
-		// TODO Auto-generated method stub
-		super.setAction(action);
+	public List<Action<String>> getActions() {
+		return actions;
+	}
+	public List<Condition> getConditions() {
+		return conditions;
 	}
 	
-	@Override
-	public void setListOfCondition(List<Condition> conditions) {
-		// TODO Auto-generated method stub
-		super.setListOfCondition(conditions);
-	}
+	
 	
 }

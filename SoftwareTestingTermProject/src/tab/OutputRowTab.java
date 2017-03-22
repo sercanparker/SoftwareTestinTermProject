@@ -2,6 +2,7 @@ package tab;
 
 import java.util.List;
 
+import common.InputVariable;
 import common.OutputVariable;
 
 
@@ -10,6 +11,13 @@ import common.OutputVariable;
  * @see OutputVariable*/
 public class OutputRowTab extends RowTab<OutputVariable<String>>{
 
+	public OutputRowTab(List<OutputVariable<String>> rows,String path,String name,ExcelFile hostExcelFile) {
+		// TODO Auto-generated constructor stub
+		super.rows = rows;
+		super.path = path;
+		super.name = name;
+		super.hostExcelFile = hostExcelFile;
+	}
 	/**
 	 *According to row list objects, it write onto cells 
 	 *Not implemented for term project now. */

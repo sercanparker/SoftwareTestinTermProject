@@ -2,6 +2,8 @@ package tab;
 
 import java.util.List;
 
+import org.apache.poi.ss.usermodel.Sheet;
+
 /**
  * Class is used by ExcelFile object to represent its Tab structure */
 public abstract class Tab {
@@ -17,7 +19,9 @@ public abstract class Tab {
 	/**
 	 * variable that indicates that host excelfile object that tab exist.*/
 	protected ExcelFile hostExcelFile;
-
+	
+	protected Sheet sheet;
+	/*
 	public Tab() {
 
 	}
@@ -27,6 +31,7 @@ public abstract class Tab {
 		this.name = name;
 		this.hostExcelFile = hostExcelFile;
 	}
+	*/
 	
 	public String getPath() {
 		return path;
