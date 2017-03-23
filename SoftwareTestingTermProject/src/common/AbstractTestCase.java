@@ -9,9 +9,6 @@ public class AbstractTestCase {
 	 * @see Condition
 	 * */
 	private List<Condition> conditions;
-	
-	
-	
 	/**
 	 * Abstract Test Case has only one Action.
 	 * @see Action

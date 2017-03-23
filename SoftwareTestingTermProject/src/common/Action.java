@@ -5,8 +5,6 @@ public class Action<T> {
 	 * Type of action PRINT,OPEN etc.*/
 	private EActionType actionType;
 	
-	
-	
 	/**
 	 *Answer of while action is active mode, which parameter are on fire ? */
 	private T parameter;

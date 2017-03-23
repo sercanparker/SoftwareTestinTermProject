@@ -9,16 +9,6 @@ import java.util.List;
 public abstract class ColumnTab<T> extends Tab {
 	protected List<T> columns;
 
-	/*
-	public ColumnTab() {
-	}
-
-	public ColumnTab(List<T> columns,String path,String name,ExcelFile hostExcelFile) {
-		super(path,name,hostExcelFile);
-		this.columns = columns;
-	}
-	*/
-
 	public List<T> getColumns() {
 		return columns;
 	}

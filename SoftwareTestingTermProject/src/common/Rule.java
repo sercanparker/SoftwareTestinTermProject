@@ -11,7 +11,6 @@ public class Rule  {
 	 * */
 	private List<Condition> conditions;
 	private List<Action<String>> actions;
-	//private List<AbstractTestCase> abstractTestCases;
 
 	public Rule() {
 

@@ -27,25 +27,36 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 public class Main {
-	
+
 	public static void main(String[] args) throws IOException {
-		
+
 		String path ;
-		System.out.println("################");
-		System.out.println("DO NOT FORGET:\n While preparing Decision Table be sure that Conditions \n and Actions lines have reference from Condition and Action tabs \n and just use T(CAPITAL) for True, F(CAPITAL) for False and X for active Action");
-		System.out.println("example : =Conditions!B2 etc.");
-		System.out.println("################");
+		System.out.println("#####################");
+		System.out.println("We prepared a sample excel file to test under Input Folder");
+		System.out.println("After execution , Please check excel file under Output Folder ");
+		System.out.println("#####################");
+		System.out.println("Please be sure that Apache Poi library was added as shown on our guidelines ");
+		System.out.println("You could find guidline file source under Guidlines folder");
+		System.out.println("You could find required jar files under Jar Files folder");
+		System.out.println("#####################");
+		System.out.println("For homework_1, report was prepared under Reports folder ");
+		System.out.println("If you get trouble about Jar files or other things in project \n please contact us sercansensulun@gmail.com or emrekarakis@gmail.com");
+		System.out.println("#####################");
 		
-		System.out.println("Enter Excel File Path and press enter");
-		System.out.println("example : C:\\Users\\TonyParker\\Desktop\\Homework1_template.xlsx");
-		System.out.println("################");
-		
-		Scanner scan = new Scanner(System.in);
-		path = scan.nextLine();
-		
-		ExcelFile file = new ExcelFile(path);
 
-
+		boolean isEnterPressed = false;
+		while(true){
+			System.out.println("Please press enter to execute program");
+			Scanner scan = new Scanner(System.in);
+			String enteredString = scan.nextLine();
+			if(enteredString.isEmpty()){
+				path = "Input/Homework1_template.xlsx";
+				ExcelFile file = new ExcelFile(path);
+				break;
+			}
 		}
-	
+
+
+	}
+
 }

@@ -4,13 +4,11 @@ import java.util.List;
 
 import org.apache.poi.ss.usermodel.Sheet;
 
+import common.ETabType;
+
 /**
  * Class is used by ExcelFile object to represent its Tab structure */
 public abstract class Tab {
-	/**
-	 * This path is same with path of File which holds it.
-	 */
-	protected String path;
 	
 	/**
 	 * Physical name of Tab.*/
@@ -21,25 +19,8 @@ public abstract class Tab {
 	protected ExcelFile hostExcelFile;
 	
 	protected Sheet sheet;
-	/*
-	public Tab() {
-
-	}
-
-	public Tab(String path, String name, ExcelFile hostExcelFile) {
-		this.path = path;
-		this.name = name;
-		this.hostExcelFile = hostExcelFile;
-	}
-	*/
 	
-	public String getPath() {
-		return path;
-	}
-
-	public void setPath(String path) {
-		this.path = path;
-	}
+	protected ETabType eTabType;
 
 	public String getName() {
 		return name;
