@@ -46,13 +46,16 @@ public class Main {
 
 		boolean isEnterPressed = false;
 		while(true){
-			System.out.println("Please press enter to execute program");
+			System.out.println("Please press enter 1 to Triangle Problem .");
 			Scanner scan = new Scanner(System.in);
 			String enteredString = scan.nextLine();
-			if(enteredString.isEmpty()){
-				path = "Input/Homework1_template.xlsx";
-				ExcelFile file = new ExcelFile(path);
+			if(enteredString.equals("1")){
+				path = "Input/Triangle_Homework2_template.xlsx";
+				ExcelFile file = new ExcelFile(path,EProblemType.TRIANGLE);
 				break;
+			}
+			else if(enteredString.equals("2")){
+				
 			}
 		}
 

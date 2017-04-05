@@ -17,6 +17,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import common.Action;
 import common.Condition;
 import common.DecisionTable;
+import common.EConditionOccurrence;
 import common.ETabType;
 import common.Rule;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
@@ -128,8 +129,8 @@ public class DecisionTableColumnTab extends ColumnTab<DecisionTable>{
 									for (Condition condition : conditionList) {
 										if(condition.getValue().equals(conditionValue)){
 											//which condition you on found,
-											//create condition with false and empty string as default
-											Condition condationOfRule = new Condition(false, "");
+											//create condition with DONOTMATTER and empty string as default
+											Condition condationOfRule = new Condition(EConditionOccurrence.DONTMATTER, "");
 											condationOfRule.setValue(conditionValue);
 											//now determine is it True or False
 											if(rowOnDecitionTable.getCell(k)!=null){
@@ -137,19 +138,24 @@ public class DecisionTableColumnTab extends ColumnTab<DecisionTable>{
 												String cellValue = rowOnDecitionTable.getCell(k).toString();
 												if(cellValue.equals("T")){
 													//it is True
-													condationOfRule.setIsOccurred(true);
+													condationOfRule.setIsOccurred(EConditionOccurrence.TRUE);
 													conditionsOfRule.add(condationOfRule);
 
 
-												}else {
+												}else if(cellValue.equals("F")){
 													//it is False
-													condationOfRule.setIsOccurred(false);
+													condationOfRule.setIsOccurred(EConditionOccurrence.FALSE);
+													conditionsOfRule.add(condationOfRule);
+
+												}else if(cellValue.equals("-")){
+													//it is DONOTMATTER
+													condationOfRule.setIsOccurred(EConditionOccurrence.DONTMATTER);
 													conditionsOfRule.add(condationOfRule);
 
 												}
 											}else {
-												//cell is null make it false as default condition.
-												condationOfRule.setIsOccurred(false);
+												//cell is null make it DONOTMATTER as default condition.
+												condationOfRule.setIsOccurred(EConditionOccurrence.DONTMATTER);
 												conditionsOfRule.add(condationOfRule);
 
 											}

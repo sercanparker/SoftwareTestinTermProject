@@ -16,6 +16,7 @@ import common.AbstractTestCase;
 import common.Action;
 import common.Condition;
 import common.DecisionTable;
+import common.EConditionOccurrence;
 import common.ETabType;
 import common.Rule;
 
@@ -35,12 +36,14 @@ public class AbstractTestCaseRowTab extends RowTab<AbstractTestCase> {
 		super.hostExcelFile = hostExcelFile;
 		super.sheet = sheet;
 		 */
+		super.eTabType = ETabType.ETabType_Abstract_Test_Cases;
 		super.rows = new ArrayList<AbstractTestCase>();
 		super.hostExcelFile= hostExcelFile;
 		read();
 		if(write()){
 			System.out.println("Please check excel file under Output Folder , Its Abstract Test Cases tab was updated.");
 		}
+		
 	}
 
 	/**
@@ -101,13 +104,17 @@ public class AbstractTestCaseRowTab extends RowTab<AbstractTestCase> {
 						abstractTestCaseCell = abstractTestCaseRow.createCell(startingIndexOfConditionValueCell);
 					}
 					//abstractTestCaseCell is not null now...
-					if(condition.getIsOccurred()){
+					if(condition.getIsOccurred() == EConditionOccurrence.TRUE){
 						//PUT T onto cell
 						abstractTestCaseCell.setCellValue("T");
 						startingIndexOfConditionValueCell = startingIndexOfConditionValueCell + 1;
-					}else {
+					}else if(condition.getIsOccurred() == EConditionOccurrence.FALSE){
 						//PUT F onto cell
 						abstractTestCaseCell.setCellValue("F");
+						startingIndexOfConditionValueCell = startingIndexOfConditionValueCell + 1;
+					}else if(condition.getIsOccurred() == EConditionOccurrence.DONTMATTER){
+
+						abstractTestCaseCell.setCellValue("-");
 						startingIndexOfConditionValueCell = startingIndexOfConditionValueCell + 1;
 					}
 				}

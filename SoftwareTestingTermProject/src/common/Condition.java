@@ -4,21 +4,22 @@ public class Condition{
 
 	/**
 	 * It shows condition is active or not.*/
-	private Boolean isOccurred;
+	private EConditionOccurrence isOccurred;
+	//private Boolean isOccurred;
 	/**
 	 * Condition's value that such as a<10 as String*/
 	private String value;
 
-	public Condition(Boolean isOccurred, String value) {
+	public Condition(EConditionOccurrence isOccurred, String value) {
 		this.isOccurred = isOccurred;
 		this.value = value;
 	}
 
-	public Boolean getIsOccurred() {
+	public EConditionOccurrence getIsOccurred() {
 		return isOccurred;
 	}
 
-	public void setIsOccurred(Boolean isOccurred) {
+	public void setIsOccurred(EConditionOccurrence isOccurred) {
 		this.isOccurred = isOccurred;
 	}
 

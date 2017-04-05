@@ -12,7 +12,9 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
+import common.EProblemType;
 import common.ETabType;
+import common.EquivalenceClass;
 import common.InputVariable;
 import common.Requirement;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
@@ -33,6 +35,7 @@ public class InputRowTab extends RowTab<InputVariable<Integer>> {
 		this.rows = new ArrayList<InputVariable<Integer>>();
 		this.hostExcelFile = hostExcelFile;
 		if(read()){
+			
 			System.out.println("Input List ready !");
 		}
 		
@@ -89,10 +92,20 @@ public class InputRowTab extends RowTab<InputVariable<Integer>> {
 								if (row.getCell(1) != null){
 									String inputVariableName = row.getCell(1).toString();
 									if(!inputVariableName.isEmpty()){
-										//create Requirement object
+										//create Input Variable object
 										//for now value of input variable is not needed. hidden feature.
-										InputVariable<Integer> inputVariable = new InputVariable<Integer>(inputVariableName,0);
-										this.rows.add(inputVariable);
+										//determine equivalance class for input variable.
+										if(hostExcelFile.getProblemType() == EProblemType.TRIANGLE){
+											//for triangle problem every input variable has same classes
+											InputVariable<Integer> inputVariable = new InputVariable<Integer>(inputVariableName,0);
+											EquivalenceClass valid = new EquivalenceClass(1, Integer.MAX_VALUE);
+											EquivalenceClass invalid = new EquivalenceClass(0,Integer.MIN_VALUE);
+											List<EquivalenceClass> eqClasses = new ArrayList<EquivalenceClass>();
+											eqClasses.add(valid);
+											eqClasses.add(invalid);
+											inputVariable.setEquivalenceClasses(eqClasses);
+											this.rows.add(inputVariable);
+										}
 									}
 								}
 							} 

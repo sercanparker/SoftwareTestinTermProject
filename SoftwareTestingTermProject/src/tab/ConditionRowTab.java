@@ -13,6 +13,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 import common.Condition;
+import common.EConditionOccurrence;
 import common.ETabType;
 import common.InputVariable;
 
@@ -87,8 +88,8 @@ public class ConditionRowTab extends RowTab<Condition>{
 								//up to now, for each row is an object of Condition class.
 								String conditionName = row.getCell(1).toString();
 								if(!conditionName.isEmpty()){
-									//for now isOcurred property is false as default.
-									Condition condition = new Condition(false,conditionName);
+									//for now isOcurred property is DONOTMATTER as default.
+									Condition condition = new Condition(EConditionOccurrence.DONTMATTER,conditionName);
 									this.rows.add(condition);
 								}
 							}

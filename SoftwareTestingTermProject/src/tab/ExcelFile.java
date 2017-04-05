@@ -3,6 +3,8 @@ package tab;
 import java.util.ArrayList;
 import java.util.List;
 
+import common.EProblemType;
+
 /**
  * Class represents excel file specifications
  * @see	Tab 
@@ -18,13 +20,19 @@ public class ExcelFile {
 	 * Excel file consist of List of tabs*/
 	private List<Tab> tabs;
 	
-	public ExcelFile(String path) {
+	
+	private EProblemType problemType;
+	
+	public ExcelFile(String path,EProblemType problemType) {
 		
 		this.path =  path;
+		this.problemType = problemType;
 		this.tabs = new ArrayList<Tab>();
 		setTabs();
 		
 	}
+	
+	
 
 	private void setTabs() {
 		// TODO Auto-generated method stub
@@ -50,6 +58,9 @@ public class ExcelFile {
 		AbstractTestCaseRowTab abstractTestCaseRowTab = new AbstractTestCaseRowTab(this);
 		tabs.add(abstractTestCaseRowTab);
 		
+		ConcreteTestCaseRowTab concreteTestCaseRowTab = new ConcreteTestCaseRowTab(this);
+		tabs.add(concreteTestCaseRowTab);
+		
 	}
 
 
@@ -74,6 +85,14 @@ public class ExcelFile {
 
 	public void setTabs(List<Tab> tabs) {
 		this.tabs = tabs;
+	}
+	
+	public EProblemType getProblemType() {
+		return problemType;
+	}
+	
+	public void setProblemType(EProblemType problemType) {
+		this.problemType = problemType;
 	}
 
 }
